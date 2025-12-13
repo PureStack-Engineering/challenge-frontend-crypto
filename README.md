@@ -11,7 +11,7 @@ We don't care if you can center a `div`. We care about **State Management**, **C
 ### 🎯 The Objective
 Build a Real-Time Crypto Dashboard using **React + TypeScript**.
 
-1.  **Data Source:** Use the provided mock data or consume the public [CoinGecko API](https://www.coingecko.com/en/api).
+1.  **Data Source:** Use mock data or consume the public [CoinGecko API](https://www.coingecko.com/en/api).
 2.  **Features:**
     * **List View:** Display top cryptocurrencies (Name, Symbol, Price, 24h Change).
     * **Search/Filter:** Allow filtering by name instantly.
@@ -31,30 +31,30 @@ We will clone your repo and run `npm run build` and `npm run test`. We look for:
 - **Green Lights:** The project must build without TypeScript errors.
 - **Type Safety:** Usages of `any` will result in immediate disqualification.
 - **Component Logic:** Is the "search" logic inside the component or extracted to a custom hook?
-- **Performance:** Unnecessary re-renders.
+- **Performance:** Avoid unnecessary re-renders.
 
 ## 🚀 Getting Started
 
-1. Use this template.
+1. Use this template to create your repository.
 2. Install dependencies: `npm install`.
 3. Start dev server: `npm run dev`.
-4. Implement the Dashboard.
+4. Implement the Dashboard features.
 5. Submit via Pull Request.
 
 ---
 
 ### 🚨 CRITICAL: Project Structure
-To ensure our **Automated Auditor** works, keep the build scripts standard:
+To ensure our **Automated Auditor** works, please keep the core configuration files intact:
 
 ```text
 /
-├── .github/workflows/   # PureStack Audit System
+├── .github/workflows/   # PureStack Audit System (DO NOT TOUCH)
 ├── src/
-│   ├── components/      # Reusable UI parts
-│   ├── hooks/           # Custom Logic
+│   ├── components/      # Place your reusable UI components here
+│   ├── hooks/           # Place your custom hooks here
 │   ├── App.tsx          # Main Component
-│   ├── main.tsx         # Entry Point
-│   └── setupTests.ts    # Test Configuration
-├── package.json         # Scripts: dev, build, test
-├── vite.config.ts       # Vite & Vitest Config
-└── tsconfig.json        # TypeScript Config
+│   ├── main.tsx         # Application Entry Point
+│   └── setupTests.ts    # Test Environment Configuration
+├── package.json         # Standard scripts: dev, build, test
+├── vite.config.ts       # Vite & Vitest Configuration
+└── tsconfig.json        # TypeScript Configuration
