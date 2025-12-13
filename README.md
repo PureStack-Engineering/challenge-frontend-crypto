@@ -52,6 +52,9 @@ To ensure our **Automated Auditor** works, keep the build scripts standard:
 ├── src/
 │   ├── components/      # Reusable UI parts
 │   ├── hooks/           # Custom Logic
-│   └── App.tsx
-├── package.json         # Must include 'build' and 'test' scripts
-└── README.md
+│   ├── App.tsx          # Main Component
+│   ├── main.tsx         # Entry Point
+│   └── setupTests.ts    # Test Configuration
+├── package.json         # Scripts: dev, build, test
+├── vite.config.ts       # Vite & Vitest Config
+└── tsconfig.json        # TypeScript Config
