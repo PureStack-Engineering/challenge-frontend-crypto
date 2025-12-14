@@ -1,4 +1,6 @@
-# 🎨 PureStack Frontend Challenge: The Crypto Dashboard
+# 🎨 PureStack Frontend Challenge: React, TypeScript & Performance Audit.
+
+PureStack.es - Frontend. Validated by Code
 
 ### Context
 Welcome to the **PureStack Technical Validation Protocol** for Frontend Engineering.
