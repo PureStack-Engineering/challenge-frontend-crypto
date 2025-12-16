@@ -19,28 +19,28 @@ Your seniority is defined by how you handle state, side effects, and re-renders.
 * **Focus:** Component Structure & API Consumption.
 * **Requirement:** A functional dashboard that fetches and displays data.
 * **Tasks:**
-    - [ ] **List View:** Display top cryptocurrencies (Name, Symbol, Price, 24h Change).
-    - [ ] **Search:** Implement a search bar to filter coins by name instantly.
-    - [ ] **Auto-Refresh:** Data should refresh automatically every 60 seconds.
-    - [ ] **Typing:** Define interfaces for the API response. No implicit `any`.
+    1. **List View:** Display top cryptocurrencies (Name, Symbol, Price, 24h Change).
+    2. **Search:** Implement a search bar to filter coins by name instantly.
+    3. **Auto-Refresh:** Data should refresh automatically every 60 seconds.
+    4. **Typing:** Define interfaces for the API response. No implicit `any`.
 * **Deliverable:** A clean, working application that passes the build.
 
 #### 🥈 Level 2: Pro / Senior
 * **Focus:** Custom Hooks, State Abstraction & User Experience.
 * **Requirement:** Everything in Level 3 + **Logic Extraction & Global State**.
 * **Extra Tasks:**
-    - [ ] **Custom Hooks:** Extract the fetching logic into a reusable hook (e.g., `useCryptoData`). The component should only care about UI, not `fetch`.
-    - [ ] **Global State:** Implement a "Favorites" feature. Users can star coins, and this state persists across reloads (LocalStorage). Use **Context API** or **Zustand**.
-    - [ ] **Error Handling:** Implement an **Error Boundary** or a robust error state UI. If the API fails, the app shouldn't crash white.
+    1. **Custom Hooks:** Extract the fetching logic into a reusable hook (e.g., `useCryptoData`). The component should only care about UI, not `fetch`.
+    2. **Global State:** Implement a "Favorites" feature. Users can star coins, and this state persists across reloads (LocalStorage). Use **Context API** or **Zustand**.
+    3. **Error Handling:** Implement an **Error Boundary** or a robust error state UI. If the API fails, the app shouldn't crash white.
 * **Deliverable:** A robust app with separated logic and UI.
 
 #### 🥇 Level 1: Elite / Architect
 * **Focus:** Performance, Virtualization & Re-render Optimization.
 * **Requirement:** Everything above + **Virtual Scrolling & Memoization**.
 * **Extra Tasks:**
-    - [ ] **Virtualization:** Instead of rendering 100 rows, implement **Virtual Scrolling** (using a library like `react-window` or custom implementation) to render only what is visible in the viewport.
-    - [ ] **Render Optimization:** Use `React.memo`, `useCallback`, and `useMemo` correctly. Ensure that typing in the search bar does **NOT** cause the entire list rows to re-render unnecessarily.
-    - [ ] **Strict Mode:** Enable strict TypeScript rules (no `any`, strict null checks).
+    - 1. **Virtualization:** Instead of rendering 100 rows, implement **Virtual Scrolling** (using a library like `react-window` or custom implementation) to render only what is visible in the viewport.
+    - 2. **Render Optimization:** Use `React.memo`, `useCallback`, and `useMemo` correctly. Ensure that typing in the search bar does **NOT** cause the entire list rows to re-render unnecessarily.
+    - 3. **Strict Mode:** Enable strict TypeScript rules (no `any`, strict null checks).
 * **Deliverable:** A high-performance dashboard that feels native and buttery smooth (`60fps`).
 
 ---
