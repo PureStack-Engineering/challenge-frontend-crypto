@@ -1,10 +1,5 @@
 # 🎨 PureStack Frontend Challenge: React, TypeScript & Performance Audit
 
-![Build Status](https://img.shields.io/badge/Build-Passing-success?style=for-the-badge&logo=github)
-![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=for-the-badge&logo=typescript)
-![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
-![Vitest](https://img.shields.io/badge/Tests-Vitest-yellow?style=for-the-badge)
-
 **PureStack.es - Frontend Validation Protocol.**
 > *"We don't care if you can center a div. We audit State Management, Component Architecture, and Render Performance."*
 
