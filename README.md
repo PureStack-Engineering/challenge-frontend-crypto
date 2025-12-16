@@ -82,15 +82,24 @@ Your seniority is defined by how you handle state, side effects, and re-renders.
 To ensure our **Automated Auditor** works, please keep the core configuration files intact:
 
 ```text
+### 🚨 Project Structure (Standard)
+To ensure our **Automated Auditor** works, please keep the core configuration files intact.
+You should create the folders inside `src/` as needed.
+
+```text
 /
-├── .github/workflows/   # PureStack Audit System (DO NOT TOUCH)
+├── .github/workflows/    # PureStack Audit System (DO NOT TOUCH)
 ├── src/
-│   ├── components/      # UI Components (List, Row, Card...)
-│   ├── hooks/           # Logic Abstraction (useCrypto, useDebounce...)
-│   ├── context/         # Global State (Level 2+)
-│   ├── App.tsx          # Main Layout
-│   ├── main.tsx         # Entry Point
-│   └── setupTests.ts    # Test Config
+│   ├── components/       # (Create this) UI Components
+│   ├── hooks/            # (Create this) Logic Abstraction
+│   ├── context/          # (Create this) Global State
+│   ├── App.tsx           # Main Layout
+│   ├── main.tsx          # Entry Point
+│   └── setupTests.ts     # Test Config
+├── .eslintrc.cjs         # Linting Rules
+├── .gitignore
+├── index.html            # Entry HTML
 ├── package.json
-├── vite.config.ts
-└── tsconfig.json
+├── tsconfig.json         # TS Config
+├── tsconfig.node.json    # TS Node Config
+└── vite.config.ts        # Vite Config
