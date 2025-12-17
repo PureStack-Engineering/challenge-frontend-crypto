@@ -23,7 +23,7 @@ Your seniority is defined by how you handle state, side effects, and re-renders.
     2. **Search:** Implement a search bar to filter coins by name instantly.
     3. **Auto-Refresh:** Data should refresh automatically every 60 seconds.
     4. **Typing:** Define interfaces for the API response. No implicit `any`.
-* **Deliverable:** A clean, working application that passes the build.
+* **Deliverable:** A clean, working application that passes the build and type check.
 
 #### 🥈 Level 2: Pro / Senior
 * **Focus:** Custom Hooks, State Abstraction & User Experience.
@@ -56,11 +56,35 @@ Your seniority is defined by how you handle state, side effects, and re-renders.
 ### 🚀 Execution Instructions
 
 1.  **Use this template** (Fork the repo).
-2.  Install dependencies: `npm install`.
+2.  Install dependencies:
+    ```bash
+    npm ci
+    ```
 3.  Start dev server: `npm run dev`.
 4.  Implement your solution inside `src/`.
-5.  Run tests/linting: `npm run test` / `npm run lint`.
+5.  Run validation:
+    ```bash
+    npm run type-check  # Must pass without errors
+    npm run test        # Must pass all tests
+    ```
 6.  Submit via **Pull Request** stating your target Level.
+
+> **Note:** You will see a ❌ (**Red Cross**) initially because the App does not render the expected data yet. Your goal is to write the code that turns it ✅ (**Green**).
+
+---
+
+### 📝 Audit & Validation Rules (Strict)
+
+> **⚠️ The "No-Any" Policy**
+>
+> Our automated auditor (`audit.yml`) enforces strict TypeScript and Architecture standards. Your PR will be automatically rejected if:
+>
+> 1.  **Usage of `any`:** We strictly forbid `: any` or `as any`. You must define proper Interfaces for the CoinGecko API response.
+> 2.  **Dirty Code:** `console.log` is not allowed in production code. Clean up your debug traces.
+> 3.  **Architecture Integrity:** You must respect the folder structure. Do not delete `src/hooks`, `src/components`, or `src/context`. Logic must be extracted from the main UI.
+> 4.  **Broken Types:** The pipeline executes `tsc --noEmit`. If there is a single TypeScript error, the build fails.
+
+---
 
 ### 🧪 Evaluation Criteria (PureStack Audit)
 
@@ -77,24 +101,17 @@ Your seniority is defined by how you handle state, side effects, and re-renders.
 To ensure our **Automated Auditor** works, please keep the core configuration files intact:
 
 ```text
-### 🚨 Project Structure (Standard)
-To ensure our **Automated Auditor** works, please keep the core configuration files intact.
-You should create the folders inside `src/` as needed.
-
-```text
 /
 ├── .github/workflows/    # PureStack Audit System (DO NOT TOUCH)
 ├── src/
-│   ├── components/       # (Create this) UI Components
-│   ├── hooks/            # (Create this) Logic Abstraction
-│   ├── context/          # (Create this) Global State
+│   ├── components/       # (Required) UI Components
+│   ├── hooks/            # (Required) Logic Abstraction
+│   ├── context/          # (Required) Global State
 │   ├── App.tsx           # Main Layout
 │   ├── main.tsx          # Entry Point
 │   └── setupTests.ts     # Test Config
 ├── .eslintrc.cjs         # Linting Rules
-├── .gitignore
 ├── index.html            # Entry HTML
-├── package.json
+├── package-lock.json     # Dependency Lock (Do not delete)
 ├── tsconfig.json         # TS Config
-├── tsconfig.node.json    # TS Node Config
 └── vite.config.ts        # Vite Config
