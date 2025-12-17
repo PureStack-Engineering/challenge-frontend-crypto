@@ -1,13 +1,13 @@
-import './App.css'
+import React from 'react';
 
 function App() {
   return (
-    <div className="container">
-      <h1>PureStack Crypto Challenge 🚀</h1>
-      <p>Edit <code>src/App.tsx</code> to start building your dashboard.</p>
-      {/* TODO: Add your components here */}
+    <div className="app-container">
+      <h1>PureStack Crypto Dashboard</h1>
+      {/* TODO: Implement Dashboard Here */}
+      <p>Data is loading...</p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
