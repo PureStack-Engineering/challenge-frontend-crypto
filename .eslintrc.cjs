@@ -14,5 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // Reglas extra para tu Challenge:
+    '@typescript-eslint/no-explicit-any': 'warn', // Avisa al candidato sobre 'any'
+    'no-console': ['warn', { allow: ['warn', 'error'] }] // Avisa sobre console.log
   },
 }
