@@ -1,26 +1,57 @@
 name: PureStack Frontend Audit
-on: [push, pull_request]
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build-and-test:
+  frontend-quality-gate:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    name: ⚛️ React Quality Gate
 
-      - name: Use Node.js 18
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 🔍 Phase 1: Structural Integrity
+        run: |
+          echo "::group::Architecture Validation"
+          # Enforce Clean Architecture folders
+          if [ ! -d "src/components" ]; then echo "❌ Missing: src/components/"; exit 1; fi
+          if [ ! -d "src/hooks" ]; then echo "❌ Missing: src/hooks/ (Required for Logic Extraction)"; exit 1; fi
+          if [ ! -d "src/context" ]; then echo "❌ Missing: src/context/ (Required for Global State)"; exit 1; fi
+          echo "✅ Project Structure is valid."
+          echo "::endgroup::"
+
+      - name: 🕵️ Phase 2: Anti-Pattern Detection
+        run: |
+          echo "::group::Code Quality Check"
+          
+          # 1. Ban explicit 'any' (The Lazy Type)
+          # Buscamos ": any" o "as any"
+          if grep -r ": any" src/; then echo "❌ CRITICAL: Explicit ': any' detected. Use Interfaces."; exit 1; fi
+          if grep -r "as any" src/; then echo "❌ CRITICAL: Casting 'as any' detected. Fix your types."; exit 1; fi
+
+          # 2. Ban 'console.log' (Dirty Code)
+          if grep -r "console.log" src/; then echo "❌ CRITICAL: 'console.log' detected. Clean up your debugging code."; exit 1; fi
+          
+          echo "✅ Code is clean of 'any' and logs."
+          echo "::endgroup::"
+
+      - name: 📦 Use Node.js 18
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: 📥 Install Dependencies
         run: npm ci
 
-      - name: 🛡️ Type Check (TypeScript)
-        run: npm run type-check || echo "⚠️ TypeScript errors detected (Review log)"
+      - name: 🛡️ Phase 3: Type Check (Strict)
+        # Quitamos el '|| echo' para que falle de verdad si hay errores
+        run: npm run type-check
 
-      - name: 🏗️ Build Project
-        run: npm run build
-
-      - name: 🧪 Run Unit Tests
+      - name: 🧪 Phase 4: Unit Tests (Vitest)
         run: npm run test
