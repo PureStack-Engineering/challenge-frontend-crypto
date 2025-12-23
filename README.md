@@ -3,6 +3,15 @@
 **PureStack.es - Frontend Validation Protocol.**
 > *"We don't care if you can center a div. We audit State Management, Component Architecture, and Render Performance."*
 
+> [!TIP]
+> **HOW TO START THIS CHALLENGE**
+> 1. Click the green **"Use this template"** button (top right) -> **"Create a new repository"**.
+> 2. Select **"Private"** visibility (Crucial to prevent spoilers).
+> 3. Clone your new private repository to your machine.
+> 4. Once finished, invite user **[JLMoraCastilla](https://github.com/JLMoraCastilla)** as a collaborator to review.
+>
+> ⚠️ **DO NOT FORK** this repository directly, as it will force your solution to be public.
+
 ---
 
 ### 📋 Context & Mission
@@ -13,7 +22,7 @@ This assessment is designed to audit your ability to build **scalable React appl
 **The Source:** Consume the public [CoinGecko API](https://www.coingecko.com/en/api) (or use mocked data if rate-limited).
 
 ### 🚦 Certification Levels (Choose your Difficulty)
-Your seniority is defined by how you handle state, side effects, and re-renders. State your target level in your Pull Request.
+Your seniority is defined by how you handle state, side effects, and re-renders. State your target level in your Pull Request (or commit message).
 
 #### 🥉 Level 3: Essential / Mid-Level
 * **Focus:** Component Structure & API Consumption.
@@ -55,7 +64,7 @@ Your seniority is defined by how you handle state, side effects, and re-renders.
 
 ### 🚀 Execution Instructions
 
-1.  **Use this template** (Fork the repo).
+1.  **Use the Template:** Create your **Private Repository** using the instructions at the top of this file.
 2.  Install dependencies:
     ```bash
     npm ci
@@ -67,7 +76,7 @@ Your seniority is defined by how you handle state, side effects, and re-renders.
     npm run type-check  # Must pass without errors
     npm run test        # Must pass all tests
     ```
-6.  Submit via **Pull Request** stating your target Level.
+6.  **Submit:** Push your changes to your private repo and invite the reviewer.
 
 > **Note:** You will see a ❌ (**Red Cross**) initially because the App does not render the expected data yet. Your goal is to write the code that turns it ✅ (**Green**).
 
@@ -115,3 +124,18 @@ To ensure our **Automated Auditor** works, please keep the core configuration fi
 ├── package-lock.json     # Dependency Lock (Do not delete)
 ├── tsconfig.json         # TS Config
 └── vite.config.ts        # Vite Config
+```
+---
+## ⚖️ License & Legal Notice
+
+**© 2025 PureStack.es. All Rights Reserved.**
+
+This repository is "Source Available" for **evaluation purposes only**.
+
+* **Public viewing:** Allowed.
+* **Commercial use:** ❌ Strictly Prohibited.
+* **Redistribution:** ❌ Strictly Prohibited.
+
+By accessing this material, you agree to the terms in `LICENSE.md`.
+
+> **🚫 Publishing solutions to public repositories is a violation of these terms.**
