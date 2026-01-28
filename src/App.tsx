@@ -1,4 +1,3 @@
-// BORRA LA LÍNEA DE IMPORT REACT
 function App() {
   return (
     <div className="app-container">
